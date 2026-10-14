@@ -1,3 +1,6 @@
+//Provides the SDL2 interface for display rendering, keyboard input, and platform-specific functionality
+//uses system SDL2
+
 #include "Platform.hpp"
 #include <SDL2/SDL.h>
 #include <iostream>

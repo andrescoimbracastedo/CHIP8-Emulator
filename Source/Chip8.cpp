@@ -1,3 +1,5 @@
+//Implements the CHIP-8 virtual machine, including its memory, registers, instruciton decoding, and execution
+
 #include "Chip8.hpp"
 #include <chrono>
 #include <cstdint>
