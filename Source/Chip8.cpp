@@ -121,6 +121,11 @@ void Chip8::Cycle(){
 		return;
 	}
 
+	if (pc >= MEMORY_SIZE - 1)
+	{
+		throw std::runtime_error("CHIP-8 program counter out of bounds");
+	}
+
 	opcode = (memory[pc] << 8u) | memory[pc + 1];
 
 	pc += 2;
@@ -175,6 +180,13 @@ void Chip8::OP_00E0(){
 
 //RET - Return from a subroutine
 void Chip8::OP_00EE(){
+
+	if (sp == 0)
+	{
+		throw std::runtime_error("CHIP-8 stack underflow");
+	}
+
+
     --sp;
     pc = stack[sp];
 }
@@ -188,6 +200,12 @@ void Chip8::OP_1nnn(){
 
 //CALL addr - Call subroutine at nnn 
 void Chip8::OP_2nnn(){
+
+	if (sp >= STACK_LEVELS)
+	{
+		throw std::runtime_error("CHIP-8 stack overflow");
+	}
+
     uint16_t address = opcode & 0x0FFFu;
 
     stack[sp] = pc;
@@ -545,16 +563,8 @@ void Chip8::OP_Fx1E()
 {
 	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
 
-	if (index + registers[Vx] > 0xFFFu)
-	{
-		registers[0xF] = 1;
-	}
-	else
-	{
-		registers[0xF] = 0;
-	}
+	index += registers[Vx];
 
-	index = (index + registers[Vx]) & 0xFFFu;
 }
 
 
