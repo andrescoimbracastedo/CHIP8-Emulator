@@ -62,7 +62,7 @@ I wanted to understand what happens underneath the code we write every day: how 
 ### Build
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/andrescoimbracastedo/CHIP8-Emulator
 cd CHIP8-Emulator
 
 mkdir build
