@@ -49,6 +49,43 @@ I wanted to understand what happens underneath the code we write every day: how 
 - SDL2
 - CMake
 
+
+## Building and Running
+
+### Requirements
+
+- C++ compiler with C++11 support
+- CMake
+- SDL2 development libraries
+- Git
+
+### Build
+
+```bash
+git clone <repository-url>
+cd CHIP8-Emulator
+
+mkdir build
+cd build
+
+cmake ..
+cmake --build .
+```
+
+### Run
+
+The compiled executable is placed in the `bin/` directory. From the project root, run:
+
+```bash
+cd ../bin
+./chip8 20 1 ./Roms/pong.rom
+```
+
+The arguments `20` and `1` configure the emulator's execution settings, while the final argument specifies the ROM to load.
+
+Replace `pong.rom` with another compatible CHIP-8 ROM to run a different program.
+
+
 ## Acknowledgements
 
 Built while following Austin Morlan's [Guide to Making a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/).
