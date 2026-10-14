@@ -123,7 +123,7 @@ void Chip8::Cycle(){
 
 	if (pc >= MEMORY_SIZE - 1)
 	{
-		throw std::runtime_error("CHIP-8 program counter out of bounds");
+		throw std::runtime_error("program counter out of bounds");
 	}
 
 	opcode = (memory[pc] << 8u) | memory[pc + 1];
@@ -183,7 +183,7 @@ void Chip8::OP_00EE(){
 
 	if (sp == 0)
 	{
-		throw std::runtime_error("CHIP-8 stack underflow");
+		throw std::runtime_error("stack underflow");
 	}
 
 
@@ -203,7 +203,7 @@ void Chip8::OP_2nnn(){
 
 	if (sp >= STACK_LEVELS)
 	{
-		throw std::runtime_error("CHIP-8 stack overflow");
+		throw std::runtime_error("stack overflow");
 	}
 
     uint16_t address = opcode & 0x0FFFu;
