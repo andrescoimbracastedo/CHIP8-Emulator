@@ -16,6 +16,32 @@ I wanted to understand what happens underneath the code we write every day: how 
 - **Graphics and Timing:** Implemented pixel-based graphics, display updates, and timing to run CHIP-8 programs.
 - **ROM Loading:** Loaded ROM files into virtual memory and executed their instructions through the emulation loop.
 
+## Screenshots
+
+### Pong
+
+![pong](images/PONG.png)
+
+### Tetris
+
+![tetris](images/TETRIS.png)
+
+### Timendus logo test
+
+![Timendus logo](images/TIM-LOGO.png)
+
+### IBM logo test
+
+![IBM logo](images/IBM-LOGO.png)
+
+### Corax+ opcode test
+
+![Corax+ opcode](images/CORAX-OPCODE.png)
+
+### Flag test
+
+![flag test](images/FLAG-TEST.png)
+
 ## Technologies
 
 - C++
@@ -26,3 +52,5 @@ I wanted to understand what happens underneath the code we write every day: how 
 ## Acknowledgements
 
 Built while following Austin Morlan's [Guide to Making a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/).
+
+Tested with Timendus' [CHIP8 Test Suite](https://github.com/Timendus/chip8-test-suite/tree/main)
