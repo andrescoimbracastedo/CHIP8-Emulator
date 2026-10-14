@@ -81,7 +81,7 @@ cd ../bin
 ./chip8 20 1 ./Roms/pong.rom
 ```
 
-The arguments `20` and `1` configure the emulator's execution settings, while the final argument specifies the ROM to load.
+The arguments `20` is for video scaling, and `1`  for cycle delay in ms. The final argument specifies the ROM to load.
 
 Replace `pong.rom` with another compatible CHIP-8 ROM to run a different program.
 
